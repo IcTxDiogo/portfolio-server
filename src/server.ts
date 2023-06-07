@@ -8,6 +8,7 @@ import multipart from '@fastify/multipart'
 
 import { memoriesRoutes } from './routes/memories'
 import { authRoutes } from './routes/auth'
+import { publicMemories } from './routes/publicMemories'
 
 const app = fastify()
 
@@ -25,6 +26,7 @@ app.register(jwt, {
 
 app.register(authRoutes)
 app.register(memoriesRoutes)
+app.register(publicMemories)
 
 const port = process.env.PORT || 3333
 const host = process.env.HOST || '0.0.0.0'

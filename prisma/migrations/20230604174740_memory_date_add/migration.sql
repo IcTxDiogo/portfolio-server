@@ -5,6 +5,7 @@ CREATE TABLE "User" (
     "name" TEXT NOT NULL,
     "login" TEXT NOT NULL,
     "avatarUrl" TEXT NOT NULL,
+    "html_url" TEXT NOT NULL,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
@@ -16,6 +17,7 @@ CREATE TABLE "Memory" (
     "coverUrl" TEXT NOT NULL,
     "content" TEXT NOT NULL,
     "isPublic" BOOLEAN NOT NULL DEFAULT false,
+    "memoryDate" TIMESTAMP(3) NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "Memory_pkey" PRIMARY KEY ("id")

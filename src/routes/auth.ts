@@ -37,6 +37,7 @@ export async function authRoutes(app: FastifyInstance) {
       login: z.string(),
       name: z.string(),
       avatar_url: z.string().url(),
+      html_url: z.string().url(),
     })
     const userInfo = userSchema.parse(userResponse.data)
 
@@ -53,6 +54,7 @@ export async function authRoutes(app: FastifyInstance) {
           name: userInfo.name,
           login: userInfo.login,
           avatarUrl: userInfo.avatar_url,
+          html_url: userInfo.html_url,
         },
       })
     }
